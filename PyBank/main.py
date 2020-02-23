@@ -44,11 +44,10 @@ greatest_increase = max(profit_loss_change_list)
 
 #Assign appropriate month to greatest decrease in profits and greatest decrease in profits
 greatest_decrease_index = (profit_loss_change_list).index(greatest_decrease)
-#greatest_decrease_month = (greatest_decrease_index + str(month_change_list))
+greatest_decrease_month = (month_change_list)[greatest_decrease_index]
 
 greatest_increase_index = (profit_loss_change_list).index(greatest_increase)
-#greatest_increase_month = (greatest_increase_index + str(month_change_list))
-
+greatest_increase_month = (month_change_list)[greatest_increase_index]
 
 
 #Print requested values in terminal
@@ -58,16 +57,16 @@ print("-------------------")
 print("Total Months: " + str(total_month_volume))
 print("Total: " + "$" + str(total_revenue_volume))
 print("Average Change: " + "$" + str(Average_profit_loss_change))
-print("Greatest Increase in Profits: " + str(greatest_increase_index) + "" + "" + "$" + str(greatest_increase))
-print("Greatest Decrease in Profits: " + str(greatest_decrease_index) + "" + "" + "$" + str(greatest_decrease))
+print("Greatest Increase in Profits: " + str(greatest_increase_month) + " " + " " + "$" + str(greatest_increase))
+print("Greatest Decrease in Profits: " + str(greatest_decrease_month) + " " + " " + "$" + str(greatest_decrease))
 
 #Write requested values to output file
 with open(output_file, "w") as txt_file:
     txt_file.write("Total Months: " + str(total_month_volume))
     txt_file.write("Total: " + "$" + str(total_revenue_volume))
     txt_file.write("Average Change: " + "$" + str(Average_profit_loss_change))
-    txt_file.write("Greatest Increase in Profits: " + str(greatest_increase_index)+ "" + "" + "$" + str(greatest_increase))
-    txt_file.write("Greatest Decrease in Profits: " + str(greatest_decrease_index) + "" + "" + "$" + str(greatest_decrease))
+    txt_file.write("Greatest Increase in Profits: " + str(greatest_increase_month) + " " + " " + "$" + str(greatest_increase))
+    txt_file.write("Greatest Decrease in Profits: " + str(greatest_decrease_month) + " " + " " + "$" + str(greatest_decrease))
 
 
 
